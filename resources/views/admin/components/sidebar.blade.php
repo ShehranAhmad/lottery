@@ -13,18 +13,12 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="nav-item @routeis('admin.dashboard') active @endrouteis"><a href="{{ route('admin.dashboard') }}"><i class="feather icon-home"></i>Dashboard</a></li>
 
-
-
-
             <li class=" navigation-header"><span>Others</span></li>
             <li class="nav-item @routeis('admin.inquiries*') active @endrouteis "><a href="{{route('admin.inquiries')}}"><i class="feather icon-message-square"></i>Inquiries</a></li>
 
             <li class="nav-item @routeis('admin.blogs*') active @endrouteis "><a href="{{route('admin.blogs.list')}}"><i class="feather icon-globe"></i>Blog's</a></li>
-            <li class="nav-item @routeis('admin.event*') active @endrouteis "><a href="{{route('admin.event.list')}}"><i class="fa fa-calendar-check-o"></i>Events</a></li>
             <li class="nav-item @routeis('admin.setting.index') active @endrouteis"><a href="{{ route('admin.setting.index') }}"><i class="feather icon-settings"></i>Settings</a></li>
             <li class="nav-item @routeis('admin.setting.meta.tags') active @endrouteis"><a href="{{ route('admin.setting.meta.tags') }}"><i class="feather icon-list"></i>Meta Tags</a></li>
-            <li class="nav-item @routeis('admin.setting.logos') active @endrouteis"><a href="{{ route('admin.setting.logos') }}"><i class="feather icon-list"></i>Top Companies</a></li>
-
 
 
 

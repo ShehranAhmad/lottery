@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     public function blogs()
     {
-        $blogs=Blog::orderBy('created_at','DESC')->where('visibility','showed')->get();
+        $blogs=Blog::orderBy('created_at','DESC')->where('visibility','showed')->paginate(15);
         return view('frontend.blog',get_defined_vars());
     }
 

@@ -50,33 +50,6 @@
                                             <input type="text" value="{{$setting['banner_description'] ?? ''}}" name="banner_description" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Home Banner Image</label>
-                                            <input type="file" class=" dropify dropify-event" id="fileChooser" name="home_banner" data-default-file="{{ asset($setting['home_banner'] ?? '')  }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Home Contact Banner</label>
-                                            <input type="file" class=" dropify dropify-event" id="fileChooser" name="home_contact_banner" data-default-file="{{ asset($setting['home_contact_banner'] ?? '')  }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Pages Banner Background 1</label>
-                                            <input type="file" class=" dropify dropify-event" id="fileChooser" name="pages_banner_background1" data-default-file="{{ asset($setting['pages_banner_background1'] ?? '')  }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Pages Banner Background 2</label>
-                                            <input type="file" class=" dropify dropify-event" id="fileChooser" name="pages_banner_background2" data-default-file="{{ asset($setting['pages_banner_background2'] ?? '')  }}">
-                                        </div>
-                                    </div>
-
-
                                 </div>
                             </div>
                         </div>
@@ -95,30 +68,18 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Footer Description</label>
-                                            <input type="text" value="{{$setting['footer_description'] ?? ''}}" name="footer_description" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
                                             <label class="bmd-label-floating">Phone</label>
                                             <input type="text" value="{{$setting['phone'] ?? ''}}" name="phone" class="form-control">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="bmd-label-floating">Email</label>
                                             <input type="text" value="{{$setting['email'] ?? ''}}" name="email" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Fax</label>
-                                            <input type="text" value="{{$setting['fax'] ?? ''}}" name="fax" class="form-control">
-                                        </div>
-                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="bmd-label-floating">Address</label>
@@ -175,7 +136,7 @@
                         <div class="card">
 
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Contact us page</h4>
+                                <h4 class="card-title">Contact us Image</h4>
                             </div>
                             <div class="card-body">
                                 <div class="row">

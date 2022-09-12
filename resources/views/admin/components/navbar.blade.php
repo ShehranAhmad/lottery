@@ -12,7 +12,7 @@
 
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">{{ Auth::User()->name ?? 'Administrator' }}</span><span class="user-status text-success">{{ Auth::User()->roles[0]->name ?? '' }}</span></div><span><img class="round" src="{{ asset('uploads/users/default.png') }}" alt="avatar" height="40" width="40"></span>
+                            <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">{{ Auth::User()->name ?? 'Administrator' }}</span><span class="user-status text-success">{{ Auth::User()->roles[0]->name ?? '' }}</span></div><span><img class="round" src="{{ asset(auth()->user()->avatar) }}" alt="avatar" height="40" width="40"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="feather icon-user"></i>Profile</a>

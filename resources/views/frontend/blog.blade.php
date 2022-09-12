@@ -1,7 +1,10 @@
 @extends('layouts.frontend')
 @section('title','Blogs')
-
-
+@section('meta')
+    <meta name="keywords" content="{{$setting['blog_meta_tag'] ?? '' }}" />
+    <meta name="title" content="{{ $setting['blog_title'] ?? '' }}" />
+    <meta name="description" content="{{$setting['blog_meta_description'] ?? '' }}" />
+@endsection
 @section('content')
 
 
@@ -37,162 +40,27 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="post-item m-bottom-30">
                                     <div class="thumb">
-                                        <img src="{{asset($blog->image)}}" alt="image">
+                                        <img src="{{asset($blog->image)}}" style="height: 210px" alt="image">
                                     </div>
-                                    <div class="content">
-                                        <h3 class="post-title"><a href="#0">{{substr_replace($blog->description, "...", 40)}}</a></h3>
+                                    <div class="content" style="height: 313px">
+                                        <h3 class="post-title" style="min-height: 60px"><a href="#0">{{substr_replace($blog->title, "...", 50)}}</a></h3>
                                         <ul class="post-meta">
                                             <li><a href="#0"><span>BY</span>{{$blog->written_by}}</a></li>
                                         </ul>
-                                        <p>{{substr_replace($blog->description, "...", 70)}}</p>
-                                        <a href="#0" class="blog-btn">read more</a>
+                                        @php
+                                            $sm=strip_tags($blog->description);
+                                            $desc=substr_replace($sm, "...", 110);
+                                        @endphp
+                                        <p>{!! $desc !!}</p>
+                                        <a href="{{route('blog_detail',$blog->slug)}}" class="blog-btn">read more</a>
                                     </div>
                                 </div>
                             </div><!-- post-item end -->
 
                         @endforeach
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m2.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">Try Playing Lotto Online and Check How...</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m1.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">Learn the Advantages of Playing Lottery...</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m3.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">Do You Know How to Become a Lotto....</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m4.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">All-time highest lottery winnings</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m3.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">Do You Know How to Become a Lotto....</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m5.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">A few tips on how to win the lotto online</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m6.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">What to avoid when you win the lotto</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
-                        <div class="col-lg-4 col-md-6">
-                            <div class="post-item m-bottom-30">
-                                <div class="thumb">
-                                    <img src="{{asset('frontend/assets/images/blog/m5.jpg')}}" alt="image">
-                                </div>
-                                <div class="content">
-                                    <h3 class="post-title"><a href="#0">A few tips on how to win the lotto online</a></h3>
-                                    <ul class="post-meta">
-                                        <li><a href="#0"><span>BY</span>David Millward</a></li>
-                                        <li><a href="#0"><i class="fa fa-calendar"></i>11 June 2018</a></li>
-                                    </ul>
-                                    <p>Do you play lotto regularly, yet, the necessity of visiting an outlet each time you want to purchase a Lotto ticket is uncomfortable...</p>
-                                    <a href="#0" class="blog-btn">read more</a>
-                                </div>
-                            </div>
-                        </div><!-- post-item end -->
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <nav class="d-pagination" aria-label="Page navigation example">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item previous"><a href="#"><i class="fa fa-chevron-left"></i>prev</a></li>
-                                    <li class="page-item active"><a href="#">1</a></li>
-                                    <li class="page-item"><a href="#">2</a></li>
-                                    <li class="page-item"><a href="#">3</a></li>
-                                    <li class="page-item next"><a href="#">next<i class="fa fa-chevron-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                    <div class="row justify-content-center mt-4">
+                        {{ $blogs->links() }}
                     </div>
                 </div>
             </div>

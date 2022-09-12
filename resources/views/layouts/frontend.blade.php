@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @yield('meta')
     <!-- site favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('frontend/assets/images/favicon.jpg')}}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset($setting['favicon'] ?? '')  }}">
     <!-- fontawesome css link -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/fontawesome.min.css')}}">
     <!-- bootstrap css link -->

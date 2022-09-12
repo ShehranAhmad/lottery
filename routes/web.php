@@ -23,6 +23,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('blogs',[HomeController::class, 'blogs'])->name('blogs');
+Route::get('blogDetail/{slug}',[HomeController::class, 'blogDetail'])->name('blog_detail');
 Route::post('inquiry-submit',[HomeController::class, 'saveInquiry'])->name('inquiry_submit');
 
 
@@ -41,6 +42,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin','auth'])->namespace(
 
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+    Route::post('update-profile', [AdminController::class, 'updateProfile'])->name('update.profile');
     Route::get('/inquiries', [AdminController::class, 'inquiries'])->name('inquiries');
     Route::get('/inquiry-detail/{id?}', [AdminController::class, 'inquiriesDetail'])->name('inquiries.detail');
     Route::get('/inquiry-close/{id?}', [AdminController::class, 'inquiriesClose'])->name('inquiries.close');

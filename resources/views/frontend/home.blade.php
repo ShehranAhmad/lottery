@@ -1,8 +1,48 @@
 @extends('layouts.frontend')
 @section('title','Home')
-
+@section('css')
+    <meta http-equiv="refresh" content="150">
+@endsection
 
 @section('content')
+
+
+    <!-- banner-section start -->
+    <section class="banner-section">
+        <div class="banner-elements-part has_bg_image" data-background="{{asset('frontend/assets/images/banner-net.png')}}">
+            <div class="element-one"><img src="{{asset('frontend/assets/images/elements/box.png')}}" alt="vector-image"></div>
+
+            <div class="element-two"><img src="{{asset('frontend/assets/images/elements/car.png')}}" alt="vector-image"></div>
+
+            <div class="element-three"><img src="{{asset('frontend/assets/images/elements/chart.png')}}" alt="vector-image"></div>
+
+            <div class="element-four"><img src="{{asset('frontend/assets/images/elements/dollars.png')}}" alt="vector-image"></div>
+
+            <div class="element-five"><img src="{{asset('frontend/assets/images/elements/laptop.png')}}" alt="vector-image"></div>
+
+            <div class="element-six"><img src="{{asset('frontend/assets/images/elements/money-2.png')}}" alt="vector-image"></div>
+
+            <div class="element-seven"><img src="{{asset('frontend/assets/images/elements/person.png')}}" alt="vector-image"></div>
+
+            <div class="element-eight"><img src="{{asset('frontend/assets/images/elements/person-2.png')}}" alt="vector-image"></div>
+
+            <div class="element-nine"><img src="{{asset('frontend/assets/images/elements/power.png')}}" alt="vector-image"></div>
+        </div>
+        <div class="banner-content-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="banner-content">
+                            <h1 class="title">Take the chance to change your life</h1>
+                            <p>Sorteo is online lottery platform inspired by few sorteo lover's fantasy of the ultimate lottery platfrom.</p>
+                            <a href="#" class="cmn-btn">buy ticket now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner-section end -->
 
     <!-- lottery-timer-section start -->
     <section class="lottery-timer-section">
@@ -52,7 +92,6 @@
                         <span class="amount">€161,557,581</span>
                         <h5 class="title">US Powerball</h5>
                         <p class="next-draw-time">Next Draw : <span id="remainTime1"></span></p>
-                        <a href="#0" class="cmn-btn">play now!</a>
                     </div>
                 </div><!-- jackpot-item end -->
                 <div class="col-lg-4 col-md-6">
@@ -61,7 +100,6 @@
                         <span class="amount">€161,557,581</span>
                         <h5 class="title">Cancer Charity</h5>
                         <p class="next-draw-time">Next Draw : <span id="remainTime2"></span></p>
-                        <a href="#0" class="cmn-btn">play now!</a>
                     </div>
                 </div><!-- jackpot-item end -->
                 <div class="col-lg-4 col-md-6">
@@ -70,7 +108,6 @@
                         <span class="amount">€161,557,581</span>
                         <h5 class="title">EuroJackpot</h5>
                         <p class="next-draw-time">Next Draw : <span id="remainTime3"></span></p>
-                        <a href="#0" class="cmn-btn">play now!</a>
                     </div>
                 </div><!-- jackpot-item end -->
             </div>
@@ -502,7 +539,7 @@
 
 
     <!-- contact-section start -->
-    <section class="contact-section overflow-hidden has_bg_image" data-background="assets/images/dark-bg-three.jpg">
+    <section class="contact-section overflow-hidden has_bg_image" id="contact_here" data-background="assets/images/dark-bg-three.jpg">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-6">
@@ -511,21 +548,22 @@
                         <p>If you have any questions or queries our helpful support team will be more than happy to assist.</p>
                     </div>
                     <div class="contact-form-area">
-                        <form class="contact-form">
+                        <form class="contact-form" id="inquiry" method="post" action="{{route('inquiry_submit')}}">
+                            @csrf
                             <div class="form-grp">
-                                <input type="text" name="contact_name" id="contact_name" placeholder="Full Name">
+                                <input type="text" required name="name" id="contact_name" placeholder="Full Name">
                             </div>
                             <div class="form-grp">
-                                <input type="email" name="contact_email" id="contact_email" placeholder="Email Address">
+                                <input type="email" name="email" required id="contact_email" placeholder="Email Address">
                             </div>
                             <div class="form-grp">
-                                <input type="tel" name="contact_phone" id="contact_phone" placeholder="Phone No">
+                                <input type="tel" name="phone" required id="contact_phone" placeholder="Phone No">
                             </div>
                             <div class="form-grp">
-                                <textarea name="contact_message" id="contact_message" placeholder="Message"></textarea>
+                                <textarea name="message" required id="contact_message" placeholder="Message"></textarea>
                             </div>
                             <div class="form-grp">
-                                <input class="submit-btn" type="submit" value="sent message">
+                                <input class="submit-btn" id="submit-inquiry" type="submit" value="sent message">
                             </div>
                         </form>
                     </div>
@@ -542,14 +580,13 @@
 
 @endsection
 @section('js')
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
     <script>
-        // var clock = $('.clock').FlipClock(99000 * 24 * 3, {
-        //     clockFace: 'HourlyCounter',
-        //     countdown: false
-        // });
-
             $(document).ready(function() {
+                setTimeout(function (){
+                    window.location.href
+                },500000)
             // Making 2 variable month and day
             var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
             var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
@@ -591,19 +628,67 @@
             }, 1000);
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            let $contactForm = $("#inquiry");
+            $contactForm.validate({
+                rules: {
+                    'name': {
+                        required: true,
+                    },
+                    'email': {
+                        required: true,
+                        email: true,
+                    },
+                    'phone':{
+                        required: true,
+                        minlength: 8,
+                    },
+                    'message':{
+                        required: true,
+                    },
 
-{{--    <script>--}}
-{{--        jQuery(document).ready(function() {--}}
-{{--            jQuery('#vmap').vectorMap({--}}
-{{--                map: 'world_en',--}}
-{{--                color: '#434574',--}}
-{{--                backgroundColor: '#f7fcff',--}}
-{{--                hoverOpacity: 0.8,--}}
-{{--                selectedColor: '#eaedef',--}}
-{{--                scaleColors: ['#434574', '#434574'],--}}
-{{--                normalizeFunction: 'polynomial'--}}
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}}
+                },
+                messages: {
+                    'name': {
+                        required: 'This Field is Required',
+                    },
+                    'email': {
+                        required: 'This Field is Required',
+                        email: 'Please Enter Valid Email Address',
+                    },
+                    'phone':{
+                        required: 'This Field is Required',
+                        minlength: 'Please Enter valid phone number',
+                    },
+                    'message':{
+                        required: 'This Field is Required',
+                    },
 
+                },
+            });
+
+            $('#submit-inquiry').click(function (e){
+                e.preventDefault();
+                if($contactForm.valid()){
+                    $.ajax({
+                        type: "POST",
+                        data: $contactForm.serialize(),
+                        url: '{{route('inquiry_submit')}}',
+                        success: function (data) {
+                            toastr.success(data.message);
+                            $('#contact_name').val('');
+                            $('#contact_email').val('');
+                            $('#contact_phone').val('');
+                            $('#contact_message').val('');
+                        },
+                        error: function (response) {
+                            toastr.success(response.error);
+                        }
+                    });
+                }
+            })
+        });
+
+    </script>
 @endsection

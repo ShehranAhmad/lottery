@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
+
+    <title>Lottery - @yield('title')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lottery - @yield('title')</title>
+    @yield('meta')
     <!-- site favicon -->
     <link rel="shortcut icon" type="image/png" href="{{asset('frontend/assets/images/favicon.jpg')}}">
     <!-- fontawesome css link -->
@@ -30,6 +32,7 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/dark-version.css')}}">
     <!-- responsive css link -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/extensions/toastr.css') }}">
     @yield('css')
 </head>
 <body>
@@ -47,42 +50,7 @@
     <!--  header-section end  -->
 
 
-    <!-- banner-section start -->
-    <section class="banner-section">
-        <div class="banner-elements-part has_bg_image" data-background="{{asset('frontend/assets/images/banner-net.png')}}">
-            <div class="element-one"><img src="{{asset('frontend/assets/images/elements/box.png')}}" alt="vector-image"></div>
 
-            <div class="element-two"><img src="{{asset('frontend/assets/images/elements/car.png')}}" alt="vector-image"></div>
-
-            <div class="element-three"><img src="{{asset('frontend/assets/images/elements/chart.png')}}" alt="vector-image"></div>
-
-            <div class="element-four"><img src="{{asset('frontend/assets/images/elements/dollars.png')}}" alt="vector-image"></div>
-
-            <div class="element-five"><img src="{{asset('frontend/assets/images/elements/laptop.png')}}" alt="vector-image"></div>
-
-            <div class="element-six"><img src="{{asset('frontend/assets/images/elements/money-2.png')}}" alt="vector-image"></div>
-
-            <div class="element-seven"><img src="{{asset('frontend/assets/images/elements/person.png')}}" alt="vector-image"></div>
-
-            <div class="element-eight"><img src="{{asset('frontend/assets/images/elements/person-2.png')}}" alt="vector-image"></div>
-
-            <div class="element-nine"><img src="{{asset('frontend/assets/images/elements/power.png')}}" alt="vector-image"></div>
-        </div>
-        <div class="banner-content-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="banner-content">
-                            <h1 class="title">Take the chance to change your life</h1>
-                            <p>Sorteo is online lottery platform inspired by few sorteo lover's fantasy of the ultimate lottery platfrom.</p>
-                            <a href="#" class="cmn-btn">buy ticket now!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- banner-section end -->
 
         @yield('content')
 
@@ -124,6 +92,16 @@
 <script src="{{asset('frontend/assets/js/jquery.vmap.world.js')}}"></script>
 <!-- main script js file -->
 <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+<script src="{{ asset('admin/vendors/js/extensions/toastr.min.js') }}"></script>
+<script>
+    @if(session('message'))
+    toastr.success("{{ session('message') }}");
+    @elseif(session('status'))
+    toastr.success("{{ session('status') }}");
+    @elseif(session('error'))
+    toastr.error("{{ session('error') }}");
+    @endif
+</script>
 @yield('js')
 
 </body>

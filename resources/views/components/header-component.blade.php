@@ -9,11 +9,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav main-menu ml-auto">
                         <li><a href="{{url('/')}}">Home</a></li>
-                        <li><a href="">results</a></li>
+                        <li><a href="{{route('blogs')}}">Blog</a></li>
 
                         <li><a href="">results</a></li>
 
-                        <li><a href="contact%20-%20dark.html">contact us</a></li>
+                        <li><a href="{{route('index')}}#contact_here">contact us</a></li>
                     </ul>
 
                 </div>

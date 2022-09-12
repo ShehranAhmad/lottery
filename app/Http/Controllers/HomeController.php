@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Inquiry;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -11,15 +13,7 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-//        $this->middleware('auth');
-    }
+
 
     /**
      * Show the application dashboard.
@@ -31,12 +25,25 @@ class HomeController extends Controller
         return view('home');
     }
 
+
+    public function blogs()
+    {
+        $blogs=Blog::orderBy('created_at','DESC')->where('visibility','showed')->get();
+        return view('frontend.blog',get_defined_vars());
+    }
+
+    public function blogDetail($slug)
+    {
+        $blog=Blog::where('slug',$slug)->first();
+        return view('frontend.blog-detail',get_defined_vars());
+    }
+
     public function saveInquiry(Request $request)
     {
         $request->validate([
             'name'=>'required',
             'email'=>'required',
-            'subject'=>'required',
+            'phone'=>'required',
             'message'=>'required',
         ]);
 
@@ -44,11 +51,10 @@ class HomeController extends Controller
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
-            'subject'=>$request->subject,
             'message'=>$request->message,
         ]);
-
-        return redirect()->back()->with('message','Your inquiry has been submitted');
+        return response()->json(['status'=>true,'message'=>'Your inquiry has been submitted']);
+//        return redirect()->back()->with('message','Your inquiry has been submitted');
     }
 
 
@@ -93,7 +99,7 @@ class HomeController extends Controller
             \DB::table('password_resets')->insert(['email' => $user->email, 'token' => $token, 'created_at' => new Carbon]);
             $url = url('/reset-password') . '/' . $token . '?email=' . $request->email;
 
-            $this->sendMail([
+            sendMail([
                 'view' => 'email.reset-password',
                 'to' => $user->email,
                 'subject' => 'Reset Password Email Link',
@@ -102,7 +108,7 @@ class HomeController extends Controller
 
                 ]
             ]);
-            dd('end');
+
             return back()->with('status', 'Link has been sent to your email');
         }
         else
@@ -112,10 +118,10 @@ class HomeController extends Controller
         }
     }
 
-    public function sendMail($data)
-    {
-        Mail::send($data['view'], ['data' => $data['data']], function ($message) use ($data) {
-            $message->to($data['to'], $data['name'])->subject($data['subject']);
-        });
-    }
+//    public function sendMail($data)
+//    {
+//        Mail::send($data['view'], ['data' => $data['data']], function ($message) use ($data) {
+//            $message->to($data['to'], $data['name'])->subject($data['subject']);
+//        });
+//    }
 }

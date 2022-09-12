@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('frontend.home');
 })->name('index');
 
+Route::get('blogs',[HomeController::class, 'blogs'])->name('blogs');
+Route::post('inquiry-submit',[HomeController::class, 'saveInquiry'])->name('inquiry_submit');
+
+
 
 require __DIR__.'/auth.php';
 

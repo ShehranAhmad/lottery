@@ -1,19 +1,5 @@
 <?php
-use Illuminate\Support\Facades\Mail;
 
-
-
-function uploadAvatar($file, $path){
-    $name = time().'-'.str_replace(' ', '-', $file->getClientOriginalName());
-    $file->move($path,$name);
-    return $path.'/'.$name;
-}
-
-function uploadFile($file, $path = 'audios',$count){
-    $name = $count.time().'_'.str_replace(' ', '-', $file->getClientOriginalName());
-    $file->move($path,$name);
-    return $path.'/'.$name;
-}
 
 function sendMail($data)
 {
@@ -21,6 +7,20 @@ function sendMail($data)
         $message->to($data['to'], $data['name'])->subject($data['subject']);
     });
 }
+
+function uploadAvatar($file, $path){
+    $name = time().'-'.str_replace(' ', '-', $file->getClientOriginalName());
+    $file->move($path,$name);
+    return $path.'/'.$name;
+}
+
+function uploadFile($file, $count, $path = 'audios'){
+    $name = $count.time().'_'.str_replace(' ', '-', $file->getClientOriginalName());
+    $file->move($path,$name);
+    return $path.'/'.$name;
+}
+
+
 
 
 

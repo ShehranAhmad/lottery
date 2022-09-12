@@ -12,7 +12,6 @@
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/vendors.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/charts/apexcharts.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/extensions/tether-theme-arrows.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/extensions/tether.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/extensions/toastr.css') }}">
@@ -69,7 +68,6 @@
 <!-- BEGIN Vendor JS-->
 
 <!-- BEGIN: Page Vendor JS-->
-<script src="{{ asset('admin/vendors/js/charts/apexcharts.min.js') }}"></script>
 <script src="{{ asset('admin/vendors/js/extensions/tether.min.js') }}"></script>
 <!-- END: Page Vendor JS-->
 
@@ -84,8 +82,12 @@
 {{--<script src="{{ asset('admin/js/scripts/pages/dashboard-analytics.js') }}"></script>--}}
 <!-- END: Page JS-->
 <script>
-    @if(session('error'))
-    toastr.error("{{ session('error') }}");
+    @if(session('message'))
+        toastr.success("{{ session('message') }}");
+    @elseif(session('status'))
+        toastr.success("{{ session('status') }}");
+    @elseif(session('error'))
+        toastr.error("{{ session('error') }}");
     @endif
 
 </script>

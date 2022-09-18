@@ -102,6 +102,26 @@
     toastr.error("{{ session('error') }}");
     @endif
 </script>
+<script>
+    $(document).ready(function (e) {
+        $('#newsletter-submit').click(function (e){
+            e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    data: $('#newsletter').serialize(),
+                    url: '{{route('newsletter')}}',
+                    success: function (data) {
+                        toastr.success(data.message);
+                        $('#news_email').val('');
+                    },
+                    error: function (response) {
+                        toastr.error(response.responseJSON.message);
+                    }
+                });
+        })
+    })
+</script>
+
 @yield('js')
 
 </body>

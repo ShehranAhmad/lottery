@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Inquiry;
+use App\Models\NewsFeed;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -22,7 +23,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('frontend.home',get_defined_vars());
+    }
+
+    public function results(){
+        $date = Carbon::now()->format('Y-m-d');
+        return view('frontend.results',get_defined_vars());
+    }
+
+    public function searchResult(Request $request){
+        $date = $request->date;
+        $html=view('partial.all-results', get_defined_vars())->render();
+        return response()->json(['html'=>$html]);
     }
 
 
@@ -67,21 +79,21 @@ class HomeController extends Controller
         $email = NewsFeed::where('email',$request->email)->first();
         if($email !=null)
         {
-            return response()->json(['success'=>false]);
+            return response()->json(['success'=>false,'message'=>'email already has been registered']);
         }
         NewsFeed::create([
             'email'=>$request->email,
         ]);
-        sendMail([
-            'view' => 'email.save_news_feed',
-            'to' => $request->email,
-            'subject' => 'NewsFeed Notification',
-            'name'=>'Bantu Notification',
-            'data' => [ 'email' => $request->email
-
-            ]
-        ]);
-        return response()->json(['success'=>true]);
+//        sendMail([
+//            'view' => 'email.save_news_feed',
+//            'to' => $request->email,
+//            'subject' => 'NewsFeed Notification',
+//            'name'=>'Bantu Notification',
+//            'data' => [ 'email' => $request->email
+//
+//            ]
+//        ]);
+        return response()->json(['success'=>true,'message'=>'email has been registered']);
     }
 
     public function passwordReset(Request $request)
@@ -118,10 +130,4 @@ class HomeController extends Controller
         }
     }
 
-//    public function sendMail($data)
-//    {
-//        Mail::send($data['view'], ['data' => $data['data']], function ($message) use ($data) {
-//            $message->to($data['to'], $data['name'])->subject($data['subject']);
-//        });
-//    }
 }

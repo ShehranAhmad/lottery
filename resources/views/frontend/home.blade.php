@@ -33,9 +33,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="banner-content">
-                            <h1 class="title">Take the chance to change your life</h1>
-                            <p>Sorteo is online lottery platform inspired by few sorteo lover's fantasy of the ultimate lottery platfrom.</p>
-                            <a href="#" class="cmn-btn">buy ticket now!</a>
+                            <h1 class="title">{{$setting['banner_heading']??''}}</h1>
+                            <p>{{$setting['banner_description']??''}}</p>
                         </div>
                     </div>
                 </div>
@@ -132,7 +131,7 @@
                         <div class="lottery-winning-num-table">
                             <h3 class="block-title">lottery winning numbers</h3>
                             <div class="lottery-winning-table">
-                                <table class="border-table">
+                                <table class="border-table home">
                                     <thead>
                                         <tr class="lottery-heading">
                                             <th class="" >नाम</th>
@@ -455,7 +454,6 @@
                 <div class="col-lg-6">
                     <div class="work-steps-thumb-part">
                         <img src="{{asset('frontend/assets/images/elements/step.png')}}" alt="work-step-image">
-                        <a href="https://www.youtube.com/embed/aFYlAzQHnY4" data-rel="lightcase:myCollection" class="play-btn"><i class="fa fa-play"></i></a>
                     </div>
                 </div>
             </div>

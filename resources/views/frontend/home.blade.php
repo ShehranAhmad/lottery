@@ -305,7 +305,7 @@
                 </div>
 
                 <div class="col-lg-12 text-center">
-                    <a href="#" class="text-btn">see all result</a>
+                    <a href="{{route('results')}}" class="text-btn">see all result</a>
                 </div>
             </div>
         </div>

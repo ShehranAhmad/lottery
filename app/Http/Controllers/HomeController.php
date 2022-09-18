@@ -64,6 +64,7 @@ class HomeController extends Controller
             'email'=>$request->email,
             'phone'=>$request->phone,
             'message'=>$request->message,
+            'status'=>'active'
         ]);
         return response()->json(['status'=>true,'message'=>'Your inquiry has been submitted']);
 //        return redirect()->back()->with('message','Your inquiry has been submitted');

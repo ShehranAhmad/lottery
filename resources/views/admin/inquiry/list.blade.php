@@ -25,7 +25,6 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Number</th>
-                                    <th>Subject</th>
                                     <th class="float-right">Action</th>
                                 </tr>
                                 </thead>
@@ -35,8 +34,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$job->name}}</td>
                                         <td>{{$job->email}}</td>
-                                        <td>{{$job->number}}</td>
-                                        <td>{{$job->subject}}</td>
+                                        <td>{{$job->phone}}</td>
                                         <td class="float-right">
                                             <div class="btn-group">
                                                 <a href="{{route('admin.inquiries.detail',$job->id)}}" class="btn btn-relief-success">Detail</a>

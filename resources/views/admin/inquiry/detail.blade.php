@@ -42,7 +42,7 @@
                                     </tr>
                                     <tr>
                                         <td class="font-weight-bold">Phone</td>
-                                        <td>{{$inquiry->number}}</td>
+                                        <td>{{$inquiry->phone}}</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -58,10 +58,10 @@
                                         <td class="font-weight-bold">Inquiry Date</td>
                                         <td>{{date('d-m-Y',strtotime($inquiry->created_at))}}</td>
                                     </tr>
-                                    <tr>
-                                        <td class="font-weight-bold">Subject</td>
-                                        <td>{{$inquiry->subject}}</td>
-                                    </tr>
+{{--                                    <tr>--}}
+{{--                                        <td class="font-weight-bold">Subject</td>--}}
+{{--                                        <td>{{$inquiry->subject}}</td>--}}
+{{--                                    </tr>--}}
                                     </tbody>
                                 </table>
                             </div>

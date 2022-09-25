@@ -2,7 +2,7 @@
 <div class="row justify-content-center">
     <div class="col-lg-7">
         <div class="section-header text-center">
-            <h3 class="section-title">12-09-2022</h3>
+            <h3 class="section-title">{{ $date }}</h3>
             <p class="text-left">Select Prize Draw Date</p>
             <form class="subscribe-form mt-1" id="result-form" method="post" >
                 @csrf
@@ -33,17 +33,27 @@
                         </tr>
                         </thead>
                         <tbody class="lottery-result">
-                        <tr class="">
-                            <td class="" >09:00 am</td>
-                            <td class="" >72</td>
-                            <td class="" >88</td>
-                            <td class="" >66</td>
-                            <td class="" >98</td>
-                            <td class="" >22</td>
-                            <td class="" >63</td>
-                            <td class="" >95</td>
-                            <td class="" >18</td>
-                        </tr>
+                        
+                            @if ($lottery_data->count() == 0)
+                            <tr>
+                                <td colspan="9">No Record Found</td>
+                            </tr>
+                            @else
+                                @foreach($lottery_data as $obj)
+                                    <tr>
+                                        <td>{{ date('h:i a' , strtotime($obj->time)) }}</td>
+                                        <td>{{$obj->raja_rani}}</td>
+                                        <td>{{$obj->main_star}}</td>
+                                        <td>{{$obj->super_fast}}</td>
+                                        <td>{{$obj->chetak_fast}}</td>
+                                        <td>{{$obj->sangam_fast}}</td>
+                                        <td>{{$obj->rajshri_special}}</td>
+                                        <td>{{$obj->raj_rani}}</td>
+                                        <td>{{$obj->gold}}</td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                        
                         </tbody>
                     </table>
                 </div>

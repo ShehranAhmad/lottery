@@ -8,7 +8,7 @@
     <!-- lottery-result-section start -->
     <section class="lottery-result-section section-padding has_bg_image" data-background="{{asset('frontend/assets/images/dark-bg-one.jpg')}}">
         <div class="container results-html">
-            @include('partial.all-results',['date',$date])
+            @include('partial.all-results',['date'=> $date, "lottery_data" => $lottery_data])
         </div>
     </section>
     <!-- lottery-result-section end -->

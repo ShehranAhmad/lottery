@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Mail;
+use App\Models\LotteryTable;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,26 @@ class HomeController extends Controller
 
     public function results(){
         $date = Carbon::now()->format('Y-m-d');
+        $lottery_data = LotteryTable::whereDate('date', Carbon::today())->get();
         return view('frontend.results',get_defined_vars());
+    }
+
+    public function insertLotteryData(Request $request){
+       
+        // $request->validate([
+        //     'date'=>'required',
+        //     'time'=>'required',
+        // ]);
+        // dd($request->all());
+        $data = $request->all();
+        foreach ($data as $obj) {
+            LotteryTable::updateOrCreate($obj);
+        };
+
+        return response()->json([
+            "success"=> true,
+            "description"=> "Records dumped successfully"
+        ]);
     }
 
     public function searchResult(Request $request){

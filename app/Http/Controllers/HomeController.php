@@ -53,6 +53,7 @@ class HomeController extends Controller
 
     public function searchResult(Request $request){
         $date = $request->date;
+        $lottery_data = LotteryTable::whereDate('date', $date)->get();
         $html=view('partial.all-results', get_defined_vars())->render();
         return response()->json(['html'=>$html]);
     }

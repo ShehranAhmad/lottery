@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $lottery_data = LotteryTable::whereDate('date', Carbon::today())->latest()->first();
         return view('frontend.home',get_defined_vars());
     }
 
@@ -34,7 +35,7 @@ class HomeController extends Controller
     }
 
     public function insertLotteryData(Request $request){
-       
+
         // $request->validate([
         //     'date'=>'required',
         //     'time'=>'required',

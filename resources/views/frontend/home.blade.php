@@ -73,46 +73,6 @@
     </section>
     <!-- lottery-timer-section end -->
 
-    <!-- jackpot-section start -->
-    <section class="jackpot-section section-padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-header text-center">
-                        <h2 class="section-title">Lottery Jackpots</h2>
-                        <p>Choose from the Powerball, Mega Millions, Lotto or Lucky Day Lotto and try for a chance to win a big cash prize</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="jackpot-item text-center">
-                        <img src="{{asset('frontend/assets/images/elements/jackpot-1.png')}}" alt="image">
-                        <span class="amount">€161,557,581</span>
-                        <h5 class="title">US Powerball</h5>
-                        <p class="next-draw-time">Next Draw : <span id="remainTime1"></span></p>
-                    </div>
-                </div><!-- jackpot-item end -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="jackpot-item text-center">
-                        <img src="{{asset('frontend/assets/images/elements/jackpot-2.png')}}" alt="image">
-                        <span class="amount">€161,557,581</span>
-                        <h5 class="title">Cancer Charity</h5>
-                        <p class="next-draw-time">Next Draw : <span id="remainTime2"></span></p>
-                    </div>
-                </div><!-- jackpot-item end -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="jackpot-item text-center">
-                        <img src="{{asset('frontend/assets/images/elements/jackpot-3.png')}}" alt="image">
-                        <span class="amount">€161,557,581</span>
-                        <h5 class="title">EuroJackpot</h5>
-                        <p class="next-draw-time">Next Draw : <span id="remainTime3"></span></p>
-                    </div>
-                </div><!-- jackpot-item end -->
-            </div>
-        </div>
-    </section>
-    <!-- jackpot-section start -->
 
     <!-- lottery-result-section start -->
     <section class="lottery-result-section section-padding has_bg_image" data-background="{{asset('frontend/assets/images/dark-bg-one.jpg')}}">
@@ -121,7 +81,6 @@
                 <div class="col-lg-7">
                     <div class="section-header text-center">
                         <h2 class="section-title">Latest Lottery Results</h2>
-                        <p>Check your lotto results online, find all the lotto winning numbers and see if you won the latest lotto jackpots! </p>
                     </div>
                 </div>
             </div>
@@ -129,7 +88,13 @@
                 <div class="col-lg-12">
                     <div class="lottery-winning-num-part">
                         <div class="lottery-winning-num-table">
-                            <h3 class="block-title">lottery winning numbers</h3>
+                            <div class="row">
+                                <div class="col-md-6"><h3 class="block-title">lottery winning numbers</h3></div>
+                                <div class="col-md-6 text-right pr-5">
+                                    <h4 class="block-title">नेक्स्ट ड्रा टाइम <br> {{ date('h:i a' , strtotime($lottery_data->time??'09:00')) }} </h4>
+                                </div>
+                            </div>
+
                             <div class="lottery-winning-table">
                                 <table class="border-table home">
                                     <thead>
@@ -149,7 +114,7 @@
                                             <th class="" >9</th>
                                             <th class="">क्वांटिटी</th>
                                             <th class="">अमाउंट</th>
-                                            <th class="">05:30 pm</th>
+                                            <th class="">{{ date('h:i a' , strtotime($lottery_data->time??'08:30')) }}</th>
                                         </tr>
                                     </thead>
                                     <tbody class="lottery-record">
@@ -169,7 +134,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->raja_rani ?? 0}}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span class="">मेन स्टार <br> Main Star</span></td>
@@ -187,7 +152,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->main_star ?? 0}}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span class="">सुपर फ़ास्ट <br> Super Fast</span></td>
@@ -205,7 +170,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->super_fast ?? 0}}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span class="">चेतक फ़ास्ट <br> Chetak Fast</span></td>
@@ -223,7 +188,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->chetak_fast  ?? 0}}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span class="">संगम फ़ास्ट <br> Sangam Fast</span></td>
@@ -241,7 +206,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->sangam_fast ?? 0}}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span class="">राजश्री स्पेशल <br> Rajshri Special</span></td>
@@ -259,7 +224,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->rajshri_special ?? 0}}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span class="">राज रानी <br> Raj Rani</span></td>
@@ -277,7 +242,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->raj_rani ?? 0}}</span></td>
                                         </tr>
                                         <tr>
                                             <td><span class="">गोल्ड<br> Gold</span></td>
@@ -295,7 +260,7 @@
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
                                             <td><input type="text"></td>
-                                            <td><span class="">32</span></td>
+                                            <td><span class="">{{$lottery_data->gold ?? 0}}</span></td>
                                         </tr>
                                     </tbody>
                                 </table>

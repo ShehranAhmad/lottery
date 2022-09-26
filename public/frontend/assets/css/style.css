@@ -3867,7 +3867,7 @@ div[class*="position"] .details .area {
 }
 
 .result-table tbody tr td {
-    background: #FFF;
+    background: #FFF !important;
     font-size: 17px;
     font-width: bold;
 }

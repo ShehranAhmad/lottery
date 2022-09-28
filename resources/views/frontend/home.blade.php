@@ -91,7 +91,7 @@
                             <div class="row">
                                 <div class="col-md-6"><h3 class="block-title">lottery winning numbers</h3></div>
                                 <div class="col-md-6 text-right pr-5">
-                                    <h4 class="block-title">नेक्स्ट ड्रा टाइम <br> {{ date('h:i a' , strtotime($lottery_data->time??'09:00')) }} </h4>
+                                    <h4 class="block-title">नेक्स्ट ड्रा टाइम <br> {{\Carbon\Carbon::parse($lottery_data->time??'08:30')->addMinutes(30)->format('h:i a')}}</h4>
                                 </div>
                             </div>
 

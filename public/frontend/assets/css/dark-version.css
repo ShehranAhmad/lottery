@@ -1,6 +1,7 @@
 /* dark version css start */
 .main-dark-version .header-section.menu-fixed {
-  background-color: #2B2D5C;
+  /*background-color: #2B2D5C;*/
+  background-color: var(--dark-second-color);
 }
 .main-dark-version .banner-elements-part {
   background-position: 70% 145%;
@@ -19,7 +20,8 @@
 
 .main-dark-version .lottery-timer-section {
   background-color: var(--dark-second-color);
-  border-color: rgb(56, 58, 119);
+  /*border-color: rgb(56, 58, 119);*/
+  border-color: var(--dark-second-color);
 }
 .main-dark-version .flip-clock-wrapper ul li a div div.inn {
   background-color: #2b2d5c;
@@ -101,7 +103,7 @@
 div[class*="position"] .dot {
   background-color: #ffffff;
 }
-.main-dark-version .testimonial-slider-arrows .button-next, 
+.main-dark-version .testimonial-slider-arrows .button-next,
 .main-dark-version .testimonial-slider-arrows .button-prev {
   color: #ffffff;
 }
@@ -110,7 +112,7 @@ div[class*="position"] .dot {
   -webkit-box-shadow: 0 0 3px 2px rgba(51, 181, 247, 0.15);
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
 }
-.main-dark-version .contact-form input, 
+.main-dark-version .contact-form input,
 .main-dark-version .contact-form textarea {
   background-color: #303266;
 }
@@ -128,7 +130,8 @@ div[class*="position"] .dot {
   border-color: #545680;
 }
 .main-dark-version .border-top {
-  border-top: 1px solid rgb(56, 58, 119) !important;
+  /*border-top: 1px solid rgb(56, 58, 119) !important;*/
+  border-top: 1px solid var(--dark-second-color) !important;
 }
 .main-dark-version .affiliate-item .icon::after {
   border: 1px solid rgba(51, 181, 247, 0.2);

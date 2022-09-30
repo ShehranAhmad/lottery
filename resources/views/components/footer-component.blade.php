@@ -15,11 +15,11 @@
                     <div class="row justify-content-between">
                         <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
                             <div class="footer-widget widget-about">
-                                <h3 class="widget-title">About Sorteo</h3>
+                                <h3 class="widget-title">About LotteryBazar</h3>
                                 <ul class="footer-list-menu">
                                     <li><a href="#0">About us</a></li>
                                     <li><a href="#0">How it Works</a></li>
-                                    <li><a href="{{route('index')}}#contact_here">Contact us</a></li>
+                                    <li><a href="{{route('contact')}}">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -59,10 +59,9 @@
                     </div>
                     <div class="col-lg-6 col-sm-5">
                         <ul class="footer-social-links d-flex justify-content-end">
-                            <li><a href="#0"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#0"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#0"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#0"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="{{$setting['facebook'] ?? '#'}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{$setting['twitter'] ?? '#'}}"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="{{$setting['instagram'] ?? '#'}}"><i class="fa fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

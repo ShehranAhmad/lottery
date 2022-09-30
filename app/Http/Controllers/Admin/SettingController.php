@@ -15,6 +15,11 @@ class SettingController extends Controller
         return view('admin.setting.setting');
     }
 
+    public function home()
+    {
+        return view('admin.setting.home-page');
+    }
+
     public function topCompanies()
     {
         $companies=HiringCompany::all();

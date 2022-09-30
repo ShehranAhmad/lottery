@@ -123,12 +123,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                         <button type="submit" class="btn btn-primary pull-left">Save</button>
                         <div class="clearfix"></div>
                     </form>
@@ -147,8 +141,5 @@
             });
 
         });
-
     </script>
-
-
 @endsection

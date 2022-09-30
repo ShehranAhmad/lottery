@@ -13,7 +13,7 @@
 
                         <li><a href="{{route('results')}}">results</a></li>
 
-                        <li><a href="{{route('index')}}#contact_here">contact us</a></li>
+                        <li><a href="{{route('contact')}}">contact us</a></li>
                     </ul>
 
                 </div>

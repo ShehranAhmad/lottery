@@ -27,6 +27,10 @@ class HomeController extends Controller
         $lottery_data = LotteryTable::whereDate('date', Carbon::today())->latest()->first();
         return view('frontend.home',get_defined_vars());
     }
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
 
     public function results(){
         $date = Carbon::now()->format('Y-m-d');

@@ -50,7 +50,8 @@
     padding: 15px 15px 30px 15px;
   }
   .main-dark-version .navbar-collapse {
-    background-color: #1d1e41;
+    /*background-color: #1d1e41;*/
+    background-color: var(--dark-second-color);
   }
   .main-menu li a {
     padding: 12px 30px;
@@ -318,7 +319,8 @@
     border-bottom: 1px solid #e5e5e5;
   }
   .main-dark-version .header-bottom {
-    border-bottom-color: #3b3e7f;
+    /*border-bottom-color: #3b3e7f;*/
+    border-bottom-color: var(--dark-second-color);
   }
   .header-top-left {
     justify-content: center;

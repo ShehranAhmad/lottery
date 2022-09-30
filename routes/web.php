@@ -22,6 +22,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class, 'index'])->name('index');
 Route::get('results',[HomeController::class, 'results'])->name('results');
+Route::get('contact',[HomeController::class, 'contact'])->name('contact');
 Route::post('search-result',[HomeController::class, 'searchResult'])->name('search_result');
 Route::post('newsletter',[HomeController::class, 'saveNewsLetter'])->name('newsletter');
 Route::get('blogs',[HomeController::class, 'blogs'])->name('blogs');
@@ -64,6 +65,7 @@ Route::prefix('admin')->name('admin.')->middleware(['admin','auth'])->namespace(
     Route::get('/settings', [SettingController::class, 'index'])->name('setting.index');
     Route::get('setting/meta-tags', [SettingController::class, 'metaTags'])->name('setting.meta.tags');
     Route::post('settings/update', [SettingController::class, 'update'])->name('setting.update');
+    Route::get('settings/home', [SettingController::class, 'home'])->name('setting.home');
 
 });
 

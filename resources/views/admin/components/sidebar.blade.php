@@ -17,6 +17,7 @@
             <li class="nav-item @routeis('admin.inquiries*') active @endrouteis "><a href="{{route('admin.inquiries')}}"><i class="feather icon-message-square"></i>Inquiries</a></li>
 
             <li class="nav-item @routeis('admin.blogs*') active @endrouteis "><a href="{{route('admin.blogs.list')}}"><i class="feather icon-globe"></i>Blog's</a></li>
+            <li class="nav-item @routeis('admin.setting.home') active @endrouteis"><a href="{{ route('admin.setting.home') }}"><i class="feather icon-settings"></i>Home Setting</a></li>
             <li class="nav-item @routeis('admin.setting.index') active @endrouteis"><a href="{{ route('admin.setting.index') }}"><i class="feather icon-settings"></i>Settings</a></li>
             <li class="nav-item @routeis('admin.setting.meta.tags') active @endrouteis"><a href="{{ route('admin.setting.meta.tags') }}"><i class="feather icon-list"></i>Meta Tags</a></li>
 

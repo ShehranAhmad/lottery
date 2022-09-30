@@ -7,50 +7,31 @@
 @section('content')
 
 
-    <!-- banner-section start -->
-    <section class="banner-section">
-        <div class="banner-elements-part has_bg_image" data-background="{{asset('frontend/assets/images/banner-net.png')}}">
-            <div class="element-one"><img src="{{asset('frontend/assets/images/elements/box.png')}}" alt="vector-image"></div>
-
-            <div class="element-two"><img src="{{asset('frontend/assets/images/elements/car.png')}}" alt="vector-image"></div>
-
-            <div class="element-three"><img src="{{asset('frontend/assets/images/elements/chart.png')}}" alt="vector-image"></div>
-
-            <div class="element-four"><img src="{{asset('frontend/assets/images/elements/dollars.png')}}" alt="vector-image"></div>
-
-            <div class="element-five"><img src="{{asset('frontend/assets/images/elements/laptop.png')}}" alt="vector-image"></div>
-
-            <div class="element-six"><img src="{{asset('frontend/assets/images/elements/money-2.png')}}" alt="vector-image"></div>
-
-            <div class="element-seven"><img src="{{asset('frontend/assets/images/elements/person.png')}}" alt="vector-image"></div>
-
-            <div class="element-eight"><img src="{{asset('frontend/assets/images/elements/person-2.png')}}" alt="vector-image"></div>
-
-            <div class="element-nine"><img src="{{asset('frontend/assets/images/elements/power.png')}}" alt="vector-image"></div>
-        </div>
-        <div class="banner-content-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="banner-content">
-                            <h1 class="title">{{$setting['banner_heading']??''}}</h1>
-                            <p>{{$setting['banner_description']??''}}</p>
-                        </div>
+    <!-- online-ticket-section start -->
+    <section class="online-ticket-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-header text-center">
+                        <h2 class="section-title">{{$setting['home_banner_heading'] ?? ''}}</h2>
+                        <p>{!! $setting['home_banner_description'] ?? '' !!}</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- banner-section end -->
+    <!-- online-ticket-section end -->
+
+
 
     <!-- lottery-timer-section start -->
-    <section class="lottery-timer-section">
+    <section class="lottery-timer-section" style="background-color: #2C67BB">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-xl-5">
                     <div class="timer-content">
-                        <h3 class="title">Buy Lottery Tickets Online</h3>
-                        <p>Buy lottery tickets online to the biggest lotteries in the world offering huge jackpot prizes that you can win when you play online lottery.</p>
+                        <h3 class="title">{{$setting['home_timer_heading'] ?? ''}}</h3>
+                        <p>{!! $setting['home_timer_description'] ?? '' !!}</p>
                     </div>
                 </div>
                 <div class="col-xl-6 text-center">
@@ -75,12 +56,12 @@
 
 
     <!-- lottery-result-section start -->
-    <section class="lottery-result-section section-padding has_bg_image" data-background="{{asset('frontend/assets/images/dark-bg-one.jpg')}}">
+    <section class="lottery-result-section section-padding has_bg_image" >
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-7">
+                <div class="col-lg-8">
                     <div class="section-header text-center">
-                        <h2 class="section-title">Latest Lottery Results</h2>
+                        <h2 class="section-title">Latest Lottery Bazar Results</h2>
                     </div>
                 </div>
             </div>
@@ -269,277 +250,29 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12 text-center">
-                    <a href="{{route('results')}}" class="text-btn">see all result</a>
+                <div class="col-lg-12 text-center mt-4">
+                    <a href="{{route('results')}}" class="cmn-btn">see all result</a>
                 </div>
             </div>
         </div>
     </section>
     <!-- lottery-result-section end -->
 
-    <!-- choose-us-section start -->
-    <section class="choose-us-section section-padding">
-        <div class="choose-us-image"><img src="{{asset('frontend/assets/images/elements/mouse.png')}}" alt="image"></div>
+
+
+    <!-- online-ticket-section start -->
+    <section class="online-ticket-section section-padding" style="background-color: #2C67BB">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-header text-center">
-                        <h2 class="section-title">Why Choose Us?</h2>
-                        <p>Sorteo makes playing the world's largest lotteries easy and fun.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-9">
-                    <div class="row mt-mb-15">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="choose-item text-center">
-                                <div class="front">
-                                    <div class="icon">
-                                        <img src="{{asset('frontend/assets/images/svg-icons/choose-us-icons/1.svg')}}" alt="icon"></div>
-                                    <h4 class="title">Biggest lottery jackpots</h4>
-                                </div>
-                                <div class="back">
-                                    <p>One of the core advantages of playing an online lotto is that it is both safe and secure. So, there is no need for you to queue, or visit a retail store, to get tickets.</p>
-                                </div>
-                            </div>
-                        </div><!-- choose-item end -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="choose-item text-center">
-                                <div class="front">
-                                    <div class="icon">
-                                        <img src="{{asset('frontend/assets/images/svg-icons/choose-us-icons/2.svg')}}" alt="icon"></div>
-                                    <h4 class="title">No commission on Winnings</h4>
-                                </div>
-                                <div class="back">
-                                    <p>One of the core advantages of playing an online lotto is that it is both safe and secure. So, there is no need for you to queue, or visit a retail store, to get tickets.</p>
-                                </div>
-                            </div>
-                        </div><!-- choose-item end -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="choose-item text-center">
-                                <div class="front">
-                                    <div class="icon">
-                                        <img src="{{asset('frontend/assets/images/svg-icons/choose-us-icons/3.svg')}}" alt="icon">
-                                    </div>
-                                    <h4 class="title"> Safe and Secure Playing</h4>
-                                </div>
-                                <div class="back">
-                                    <p>One of the core advantages of playing an online lotto is that it is both safe and secure. So, there is no need for you to queue, or visit a retail store, to get tickets.</p>
-                                </div>
-                            </div>
-                        </div><!-- choose-item end -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="choose-item text-center">
-                                <div class="front">
-                                    <div class="icon">
-                                        <img src="{{asset('frontend/assets/images/svg-icons/choose-us-icons/4.svg')}}" alt="icon">
-                                    </div>
-                                    <h4 class="title">Instant payout system</h4>
-                                </div>
-                                <div class="back">
-                                    <p>One of the core advantages of playing an online lotto is that it is both safe and secure. So, there is no need for you to queue, or visit a retail store, to get tickets.</p>
-                                </div>
-                            </div>
-                        </div><!-- choose-item end -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="choose-item text-center">
-                                <div class="front">
-                                    <div class="icon">
-                                        <img src="{{asset('frontend/assets/images/svg-icons/choose-us-icons/5.svg')}}" alt="icon">
-                                    </div>
-                                    <h4 class="title">Performance Bonuses</h4>
-                                </div>
-                                <div class="back">
-                                    <p>One of the core advantages of playing an online lotto is that it is both safe and secure. So, there is no need for you to queue, or visit a retail store, to get tickets.</p>
-                                </div>
-                            </div>
-                        </div><!-- choose-item end -->
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="choose-item text-center">
-                                <div class="front">
-                                    <div class="icon">
-                                        <img src="{{asset('frontend/assets/images/svg-icons/choose-us-icons/6.svg')}}" alt="icon">
-                                    </div>
-                                    <h4 class="title">Dedicated Support</h4>
-                                </div>
-                                <div class="back">
-                                    <p>One of the core advantages of playing an online lotto is that it is both safe and secure. So, there is no need for you to queue, or visit a retail store, to get tickets.</p>
-                                </div>
-                            </div>
-                        </div><!-- choose-item end -->
+                <div class="col-lg-10">
+                    <div class="section-header ">
+                    <p>{!! $setting['home_article_description'] ?? '' !!}</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- choose-us-section end -->
-
-    <!-- work-steps-section strat -->
-    <section class="work-steps-section section-padding border-top">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <div class="section-header text-center">
-                        <h2 class="section-title">how it works</h2>
-                        <p>Sorteo is the best way to play these exciting lotteries from anywhere in the world.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="work-steps-items-part d-flex">
-                        <div class="line"><img src="{{asset('frontend/assets/images/elements/line.png')}}" alt="line-image"></div>
-                        <div class="work-steps-item">
-                            <div class="work-steps-item-inner">
-                                <div class="icon"><img src="{{asset('frontend/assets/images/svg-icons/how-work-icons/1.svg')}}" alt="icon">
-                                    <span class="count-num">01</span></div>
-                                <h4 class="title">choose</h4>
-                                <p>Choose your lottery & pick your numbers</p>
-                            </div>
-                        </div><!-- work-steps-item end -->
-                        <div class="work-steps-item">
-                            <div class="work-steps-item-inner">
-                                <div class="icon"><img src="{{asset('frontend/assets/images/svg-icons/how-work-icons/2.svg')}}" alt="icon">
-                                    <span class="count-num">02</span></div>
-                                <h4 class="title">buy</h4>
-                                <p>Complete your purchase</p>
-                            </div>
-                        </div><!-- work-steps-item end -->
-                        <div class="work-steps-item">
-                            <div class="work-steps-item-inner">
-                                <div class="icon"><img src="{{asset('frontend/assets/images/svg-icons/how-work-icons/3.svg')}}" alt="icon">
-                                    <span class="count-num">01</span></div>
-                                <h4 class="title">win</h4>
-                                <p>Start dreaming, you're almost there</p>
-                            </div>
-                        </div><!-- work-steps-item end -->
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="work-steps-thumb-part">
-                        <img src="{{asset('frontend/assets/images/elements/step.png')}}" alt="work-step-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- work-steps-section strat -->
-
-
-
-    <!-- affiliate-section start -->
-    <section class="affiliate-section section-padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-header text-center">
-                        <h2 class="section-title">Affiliate Programs</h2>
-                        <p>Tell A Friend is our unique lottery friends promotion club that enables you to earn amazing bonus money rewards for inviting friends to play the world’s biggest jackpots!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-bottom-not-30">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="affiliate-item text-center">
-                        <div class="icon">
-                            <div class="icon-inner">
-                                <img src="{{asset('frontend/assets/images/svg-icons/affiliate-icons/1.svg')}}" alt="icon">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">High Revenues</h4>
-                            <p>We offer the best commissions in the market and provide proven.</p>
-                        </div>
-                    </div>
-                </div><!-- affiliate-item end -->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="affiliate-item text-center">
-                        <div class="icon">
-                            <div class="icon-inner">
-                                <img src="{{asset('frontend/assets/images/svg-icons/affiliate-icons/4.svg')}}" alt="icon">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Reliable Payments</h4>
-                            <p>Payments are made monthly via a variety of  payment methods.</p>
-                        </div>
-                    </div>
-                </div><!-- affiliate-item end -->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="affiliate-item text-center">
-                        <div class="icon">
-                            <div class="icon-inner">
-                                <img src="{{asset('frontend/assets/images/svg-icons/affiliate-icons/2.svg')}}" alt="icon">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Unlimited Affiliates</h4>
-                            <p>Thee is no limit  for your number of affiliates and no earning limit.</p>
-                        </div>
-                    </div>
-                </div><!-- affiliate-item end -->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="affiliate-item text-center">
-                        <div class="icon">
-                            <div class="icon-inner">
-                                <img src="{{asset('frontend/assets/images/svg-icons/affiliate-icons/3.svg')}}" alt="icon">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Dedicated Support</h4>
-                            <p>Our dedicated technical support team works with you to understand and identify</p>
-                        </div>
-                    </div>
-                </div><!-- affiliate-item end -->
-            </div>
-        </div>
-    </section>
-    <!-- affiliate-section end -->
-
-
-
-
-
-    <!-- contact-section start -->
-    <section class="contact-section overflow-hidden has_bg_image" id="contact_here" data-background="assets/images/dark-bg-three.jpg">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <div class="section-header text-center">
-                        <h2 class="section-title text-uppercase">Contact us</h2>
-                        <p>If you have any questions or queries our helpful support team will be more than happy to assist.</p>
-                    </div>
-                    <div class="contact-form-area">
-                        <form class="contact-form" id="inquiry" method="post" action="{{route('inquiry_submit')}}">
-                            @csrf
-                            <div class="form-grp">
-                                <input type="text" required name="name" id="contact_name" placeholder="Full Name">
-                            </div>
-                            <div class="form-grp">
-                                <input type="email" name="email" required id="contact_email" placeholder="Email Address">
-                            </div>
-                            <div class="form-grp">
-                                <input type="tel" name="phone" required id="contact_phone" placeholder="Phone No">
-                            </div>
-                            <div class="form-grp">
-                                <textarea name="message" required id="contact_message" placeholder="Message"></textarea>
-                            </div>
-                            <div class="form-grp">
-                                <input class="submit-btn" id="submit-inquiry" type="submit" value="sent message">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="contact-thumb">
-                        <img src="{{asset('frontend/assets/images/elements/contact.png')}}" alt="image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- contact-section end -->
+    <!-- online-ticket-section end -->
 
 @endsection
 @section('js')
@@ -590,68 +323,5 @@
                 $("#day-night").html(dn);
             }, 1000);
         });
-    </script>
-    <script>
-        $(document).ready(function () {
-            let $contactForm = $("#inquiry");
-            $contactForm.validate({
-                rules: {
-                    'name': {
-                        required: true,
-                    },
-                    'email': {
-                        required: true,
-                        email: true,
-                    },
-                    'phone':{
-                        required: true,
-                        minlength: 8,
-                    },
-                    'message':{
-                        required: true,
-                    },
-
-                },
-                messages: {
-                    'name': {
-                        required: 'This Field is Required',
-                    },
-                    'email': {
-                        required: 'This Field is Required',
-                        email: 'Please Enter Valid Email Address',
-                    },
-                    'phone':{
-                        required: 'This Field is Required',
-                        minlength: 'Please Enter valid phone number',
-                    },
-                    'message':{
-                        required: 'This Field is Required',
-                    },
-
-                },
-            });
-
-            $('#submit-inquiry').click(function (e){
-                e.preventDefault();
-                if($contactForm.valid()){
-                    $.ajax({
-                        type: "POST",
-                        data: $contactForm.serialize(),
-                        url: '{{route('inquiry_submit')}}',
-                        success: function (data) {
-                            toastr.success(data.message);
-                            $('#contact_name').val('');
-                            $('#contact_email').val('');
-                            $('#contact_phone').val('');
-                            $('#contact_message').val('');
-                        },
-                        error: function (response) {
-                            toastr.success(response.error);
-                        }
-                    });
-                }
-            })
-        });
-
     </script>
 @endsection

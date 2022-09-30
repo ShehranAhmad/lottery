@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700|Ubuntu:400,500,700&amp;display=swap');
 
-/* 
+/*
 Google Fonts
-------------- 
+-------------
 font-family: 'Ubuntu', sans-serif;
 font-family: 'Roboto', sans-serif;
 */
@@ -18,8 +18,8 @@ html {
   --para-color: rgba(51, 55, 69, 0.8);
 
   /* reset for dark version */
-  --dark-main-color: #2b2d5c;
-  --dark-second-color: #303265;
+  --dark-main-color: #09F;
+  --dark-second-color: #09F;
   --dark-heading-color: #ffffff;
   --dark-para-color: #e7e7f4;
 }
@@ -84,7 +84,7 @@ p, span, li {
   font-family: var(--para-font);
   color: var(--para-color);
   line-height: 1.7;
-  font-size: 16px;
+  font-size: 19px;
 }
 a, span {
   display: inline-block;
@@ -134,8 +134,8 @@ input, textarea {
 .main-dark-version a {
   color: var(--dark-para-color);
 }
-.main-dark-version p, 
-.main-dark-version span, 
+.main-dark-version p,
+.main-dark-version span,
 .main-dark-versionli li {
   color: var(--dark-para-color);
 }

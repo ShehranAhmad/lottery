@@ -36,14 +36,13 @@
                 <div class="col-lg-12">
                     <div class="row m-bottom-not-30">
                         @foreach($blogs as $blog)
-
                             <div class="col-lg-4 col-md-6">
                                 <div class="post-item m-bottom-30">
                                     <div class="thumb">
                                         <img src="{{asset($blog->image)}}" style="height: 210px" alt="image">
                                     </div>
                                     <div class="content" style="height: 313px">
-                                        <h3 class="post-title" style="min-height: 60px"><a href="#0">{{substr_replace($blog->title, "...", 50)}}</a></h3>
+                                        <h5 class="post-title" style="min-height: 60px"><a href="{{route('blog_detail',$blog->slug)}}">{{substr_replace($blog->title, "...", 47)}}</a></h5>
                                         <ul class="post-meta">
                                             <li><a href="#0"><span>BY</span>{{$blog->written_by}}</a></li>
                                         </ul>
@@ -51,12 +50,11 @@
                                             $sm=strip_tags($blog->description);
                                             $desc=substr_replace($sm, "...", 110);
                                         @endphp
-                                        <p>{!! $desc !!}</p>
+                                        <p style="font-size: 15px !important;">{!! $desc !!}</p>
                                         <a href="{{route('blog_detail',$blog->slug)}}" class="blog-btn">read more</a>
                                     </div>
                                 </div>
                             </div><!-- post-item end -->
-
                         @endforeach
                     </div>
                     <div class="row justify-content-center mt-4">

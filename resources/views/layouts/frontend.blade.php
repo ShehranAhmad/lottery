@@ -6,8 +6,8 @@
     <title>Lottery - @yield('title')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="pjAgIkvbOwXBOhx3VcEAySED50mhqxvrT76-JGOSr_s" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="googlebot" content="noindex">
     @yield('meta')
     <!-- site favicon -->
     <link rel="shortcut icon" type="image/png" href="{{ asset($setting['favicon'] ?? '')  }}">
@@ -35,23 +35,27 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/responsive.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/vendors/css/extensions/toastr.css') }}">
     @yield('css')
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-244034172-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-244034172-1');
+    </script>
 </head>
 <body>
 
 <!-- preloader start -->
 <div id="preloader"></div>
 <!-- preloader end -->
-
-
 <div class="main-dark-version">
     <!--  header-section start  -->
     <header class="header-section">
         <x-header-component/>
     </header>
     <!--  header-section end  -->
-
-
-
 
         @yield('content')
 

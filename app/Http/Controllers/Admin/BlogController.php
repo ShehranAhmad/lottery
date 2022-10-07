@@ -23,15 +23,14 @@ class BlogController extends Controller
             $req->validate(['title' => 'required|min:3|max:190',
                 'image' => 'required',
                 'description' => 'required',
-
+                'slug'=>'required'
             ]);
         }
         else
         {
             $req->validate(['title' => 'required|min:3|max:190',
-
                 'description' => 'required',
-
+                'slug'=>'required'
             ]);
         }
 
@@ -44,8 +43,8 @@ class BlogController extends Controller
             $data['image']= $req->image->move('uploads/blogs/images',$name);
             //$image_path = uploadFile(, 'uploads/blogs/images', $count = null);
             //$data['image'] = $image_path;
-            $slug = Str::slug($data['title'], '-');
-            $data['slug'] = $slug;
+//            $slug = Str::slug($data['title'], '-');
+//            $data['slug'] = $slug;
             Blog::create($data);
             $msg = 'Blog Created Successfully';
         }

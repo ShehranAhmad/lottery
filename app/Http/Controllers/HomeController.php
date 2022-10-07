@@ -157,4 +157,9 @@ class HomeController extends Controller
         }
     }
 
+    public function sitemap()
+    {
+        return response()->view('frontend.sitemap')->header('Content-Type', 'text/xml');
+    }
+
 }

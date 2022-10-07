@@ -28,6 +28,7 @@ Route::post('newsletter',[HomeController::class, 'saveNewsLetter'])->name('newsl
 Route::get('blogs',[HomeController::class, 'blogs'])->name('blogs');
 Route::get('blogDetail/{slug}',[HomeController::class, 'blogDetail'])->name('blog_detail');
 Route::post('inquiry-submit',[HomeController::class, 'saveInquiry'])->name('inquiry_submit');
+Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('sitemap.xml');
 
 
 

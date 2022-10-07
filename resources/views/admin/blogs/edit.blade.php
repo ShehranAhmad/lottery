@@ -83,6 +83,15 @@
                                     @endif
                                 </div>
                                 <div class="form-group">
+                                    <label>Slug without spacing<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control slug" name="slug"
+                                           value="{{$blog->slug}}">
+                                    @if($errors->has('slug'))
+                                        {{ $errors->first('slug') }}
+                                    @endif
+                                </div>
+
+                                <div class="form-group">
                                     <label>Written By</label>
                                     <input type="text" class="form-control" name="written_by"
                                            value="{{$blog->written_by}}">
@@ -139,6 +148,12 @@
 
     <script>
         $(document).ready(function () {
+            $('.slug').keyup(function (event) {
+                if (event.keyCode == 32) {
+                    event.preventDefault();
+                    $(this).val($.trim($(this).val()))
+                }
+            });
             $(document).ready(function () {
                 $('#description').summernote();
             });

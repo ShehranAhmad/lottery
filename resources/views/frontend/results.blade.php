@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Results')
+@section('title','Lottery - Results')
 
 
 @section('content')

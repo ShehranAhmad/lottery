@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title','Blogs')
+@section('title','Lottery - Blogs')
 @section('meta')
     <meta name="keywords" content="{{$setting['blog_meta_tag'] ?? '' }}" />
     <meta name="title" content="{{ $setting['blog_title'] ?? '' }}" />

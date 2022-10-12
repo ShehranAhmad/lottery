@@ -1,6 +1,7 @@
 @extends('layouts.frontend')
 @section('title','Lottery Bazar Online Latest Today Update Results 2022')
 @section('css')
+    <meta name="robots" content="index">
     <meta http-equiv="refresh" content="150">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4646571254800615"
             crossorigin="anonymous"></script>

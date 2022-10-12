@@ -1,8 +1,13 @@
 @extends('layouts.frontend')
 @section('title','Lottery Bazar Online Latest Today Update Results 2022')
-@section('css')
+@section('meta')
+    <meta name="title" content="{{ $setting['home_title'] ?? '' }}" />
+    <meta name="keywords" content="{{$setting['home_meta_tag'] ?? '' }}" />
+    <meta name="description" content="{{$setting['home_meta_description'] ?? '' }}" />
     <meta name="robots" content="index">
     <meta http-equiv="refresh" content="150">
+@endsection
+@section('css')
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4646571254800615"
             crossorigin="anonymous"></script>
 @endsection

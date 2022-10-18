@@ -32,19 +32,19 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <div class="footer-widget widget-subscribe">
-                                <h3 class="widget-title">email newsletters</h3>
-                                <div class="subscribe-part">
-                                    <p>Subscribe now and receive weekly newsletter for latest draw and offer news and much more!</p>
-                                    <form class="subscribe-form" id="newsletter">
-                                        @csrf
-                                        <input type="email" name="email" required id="news_email" placeholder="Email address">
-                                        <input type="submit" id="newsletter-submit" value="subscribe">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">--}}
+{{--                            <div class="footer-widget widget-subscribe">--}}
+{{--                                <h3 class="widget-title">email newsletters</h3>--}}
+{{--                                <div class="subscribe-part">--}}
+{{--                                    <p>Subscribe now and receive weekly newsletter for latest draw and offer news and much more!</p>--}}
+{{--                                    <form class="subscribe-form" id="newsletter">--}}
+{{--                                        @csrf--}}
+{{--                                        <input type="email" name="email" required id="news_email" placeholder="Email address">--}}
+{{--                                        <input type="submit" id="newsletter-submit" value="subscribe">--}}
+{{--                                    </form>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

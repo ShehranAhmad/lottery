@@ -32,8 +32,12 @@ class HomeController extends Controller
         return view('frontend.contact');
     }
 
-    public function results(){
-        $date = Carbon::now()->format('Y-m-d');
+    public function results(Request $request){
+        if($request->date){
+            $date = $request->date;
+        }else{
+            $date = Carbon::now()->format('Y-m-d');
+        }
         $lottery_data = LotteryTable::whereDate('date', Carbon::today())->get();
         return view('frontend.results',get_defined_vars());
     }

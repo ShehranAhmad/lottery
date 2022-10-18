@@ -20,21 +20,21 @@
 
     <script>
         $(document).ready(function () {
-            $(document).on('click','#search-results',function (e){
-                e.preventDefault();
-                    $.ajax({
-                        type: "POST",
-                        data: $('#result-form').serialize(),
-                        url: '{{route('search_result')}}',
-                        success: function (data) {
-                            $('.results-html').html(data.html)
-                        },
-                        error: function (response) {
-                            toastr.success(response.error);
-                        }
-                    });
+            {{--$(document).on('click','#search-results',function (e){--}}
+            {{--    e.preventDefault();--}}
+            {{--        $.ajax({--}}
+            {{--            type: "POST",--}}
+            {{--            data: $('#result-form').serialize(),--}}
+            {{--            url: '{{route('search_result')}}',--}}
+            {{--            success: function (data) {--}}
+            {{--                $('.results-html').html(data.html)--}}
+            {{--            },--}}
+            {{--            error: function (response) {--}}
+            {{--                toastr.success(response.error);--}}
+            {{--            }--}}
+            {{--        });--}}
 
-            })
+            {{--})--}}
         })
     </script>
 

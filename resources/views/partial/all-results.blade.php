@@ -4,8 +4,7 @@
         <div class="section-header text-center">
             <h3 class="section-title">{{ $date }}</h3>
             <p class="text-left">Select Prize Draw Date</p>
-            <form class="subscribe-form mt-1" id="result-form" method="post" >
-                @csrf
+            <form class="subscribe-form mt-1" id="result-form" method="get" >
                 <input type="date" name="date" value="{{$date}}" id="subs_email" placeholder="Select Date">
                 <input type="submit" id="search-results" value="Get Draw Results">
             </form>
@@ -33,7 +32,7 @@
                         </tr>
                         </thead>
                         <tbody class="lottery-result">
-                        
+
                             @if ($lottery_data->count() == 0)
                             <tr>
                                 <td colspan="9">No Record Found</td>
@@ -53,7 +52,7 @@
                                     </tr>
                                 @endforeach
                             @endif
-                        
+
                         </tbody>
                     </table>
                 </div>

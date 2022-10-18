@@ -12,8 +12,8 @@
             </div>
             <div class="footer-top-second">
                 <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-sm-6">
                             <div class="footer-widget widget-about">
                                 <h3 class="widget-title">About LotteryBazar</h3>
                                 <ul class="footer-list-menu">
@@ -23,7 +23,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
+                        <div class="col-xl-5 col-lg-5 col-sm-6">
                             <div class="footer-widget widget-links">
                                 <h3 class="widget-title">Quick links</h3>
                                 <ul class="footer-list-menu">

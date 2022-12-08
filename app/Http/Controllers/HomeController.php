@@ -76,6 +76,9 @@ class HomeController extends Controller
 
     public function blogDetail($slug)
     {
+        if($slug == 'lottery-bazar-result'){
+            return redirect()->route('index');
+        }
         $blog=Blog::where('slug',$slug)->first();
         return view('frontend.blog-detail',get_defined_vars());
     }
